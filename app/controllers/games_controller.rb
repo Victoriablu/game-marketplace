@@ -21,12 +21,13 @@ class GamesController < ApplicationController
   end
 
   def create
-    @game = current_user.games.create(game_params)
-    
+    @game = Game.new(game_params)
+    @game.user = current_user
+
     if @game.save
-      redirect_to game_path(@game)
+      redirect_to @game, notice: 'Game was successfully listed.'
     else
-      render 'new'
+      render :new
     end
   end
 

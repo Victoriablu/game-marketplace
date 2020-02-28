@@ -3,16 +3,18 @@
 
 <%= link_to "List Game", new_game_path %>
 
-<ul>
-  <% @games.each do |game| %>
-    <li>
-      <%= link_to game.title, game_path(game) %>
-      <%= link_to "Edit Listing", edit_game_path(game)%>
-      <%= link_to "Delete Listing", game_path(game), method: :delete,
+<% for game in @games %>
+<div class="card">
+  <%= image_tag game.picture if game.picture.attached? %>
+  <p><a href='/games/<%= game.id %>'>
+        <%= game.title %>
+      </a></p>
+  <p><%= game.price %></p>
+  <%= link_to "Edit Listing", edit_game_path(game)%>
+   <%= link_to "Delete Listing", game_path(game), method: :delete,
       data: {
         confirm: "Are you sure you want to delete this listing?"
       }
       %>
-    </li>
-  <% end %>
-</ul>
+</div>
+<% end %>
