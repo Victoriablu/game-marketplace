@@ -9,4 +9,6 @@ class Game < ApplicationRecord
     length: { minimum: 5 }
     validates :price, presence: true,
     length: { minimum: 2 }
+
+    belongs_to :user
 end
