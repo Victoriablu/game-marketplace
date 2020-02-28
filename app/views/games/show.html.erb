@@ -1,7 +1,12 @@
 <h1><%= @game.title %></h1>
 
+<div id= "listing_picture" class= "listing_picture">
+<% if @game.picture.attached? %>
+  <img src="<%=(url_for(@game.picture))%>">
+  <%end%>
+</div>
+
 <ul>
-<li><%= image_tag game.picture if game.picture.attached? %></li>
 <li>Price: <%= @game.price %></li>
 <li>Platform: <%= @game.platform %></li>
 <li>Condition: <%= @game.condition %></li>
