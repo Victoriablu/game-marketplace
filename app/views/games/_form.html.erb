@@ -1,0 +1,45 @@
+<%= form_with model: @game, local: true do |form| %>
+
+  <% if @game.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@game.errors.count, "error") %> prohibited
+        this game from being saved:
+      </h2>
+      <ul>
+        <% @game.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </p>
+
+  <p>
+    <%= form.label :platform %><br>
+    <%= form.text_area :platform %>
+  </p>
+
+  <p>
+    <%= form.label :condition %><br>
+    <%= form.text_area :condition %>
+  </p>
+
+  <p>
+    <%= form.label :description %><br>
+    <%= form.text_area :description %>
+  </p>
+
+  <p>
+    <%= form.label :price%><br>
+    <%= form.number_field :price, step: 0.05 %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+  <% end %>
