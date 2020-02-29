@@ -7,12 +7,13 @@
 </div>
 
 <ul>
-<li>Price: <%= @game.price %></li>
+<li>Price: $<%= @game.price %></li>
 <li>Platform: <%= @game.platform %></li>
 <li>Condition: <%= @game.condition %></li>
 <li>Description: <%= @game.description %></li>
 </ul>
 
+<div><%= button_to "Add to cart", line_items_path(:game_id => @game.id)%></div>
 <div>
   <%= link_to "Back", "/" %>
 </div>

@@ -6,6 +6,7 @@ class Game < ApplicationRecord
     
     belongs_to :user
     has_one_attached :picture
+    has_many :line_items, dependent: :destroy
 
     def self.search(search)
         if search
