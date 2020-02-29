@@ -2,9 +2,16 @@
 <p>Trade and sell video games</p>
 
 <%= link_to "List Game", new_game_path %>
+<br>
 
+<%= form_tag games_path, :method => 'get' do %>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Search" %>
+<%end%>
+
+<br>
 <% for game in @games %>
-<div class="card">
+<div class="card">  
   <%= image_tag game.picture if game.picture.attached? %>
   <p><a href='/games/<%= game.id %>'>
         <%= game.title %>
