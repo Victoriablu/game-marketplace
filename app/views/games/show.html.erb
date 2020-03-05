@@ -1,13 +1,29 @@
+<img class="logo_cover" src="https://rails-game-vault-site-assets.s3-ap-southeast-2.amazonaws.com/games-vault-cover.png
+"/>
+
+<section id ="home">
+  <div class="overlay">
+    <nav id="navbar" class="nav">
+        <ul class="nav-list">
+         <li><%= link_to 'Home', games_path %></li>
+         <li><%= link_to "List Game", new_game_path %></li>
+         <li style="float:right"><%= form_tag games_path, :method => 'get' do %>
+          <%= text_field_tag :search, params[:search] %>
+          <%= submit_tag "Search" %>
+          <%end%></li>
+        </ul>
+    </nav>
+
 <h1><%= @game.title %></h1>
 
-<div id= "listing_picture" class= "listing_picture">
+<div id= "listing-picture" class= "listing-picture">
 <% if @game.picture.attached? %>
   <img src="<%=(url_for(@game.picture))%>">
   <%end%>
 </div>
 
-<div id="listing_description" class="listing_desription">
-  <ul>
+<div id="listing-description" class="listing-desription">
+  <ul class="details-list">
     <li>Price: $<%= @game.price %></li>
     <li>Platform: <%= @game.platform %></li>
     <li>Condition: <%= @game.condition %></li>
@@ -16,6 +32,4 @@
 </div>
 
 <div><%= button_to "Add to cart", line_items_path(:game_id => @game.id)%></div>
-<div>
-  <%= button_to "Back", "/" %>
-</div>
+
