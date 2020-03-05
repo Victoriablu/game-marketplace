@@ -1,1 +1,76 @@
+@import url('https://fonts.googleapis.com/css?family=VT323&display=swap');
 
+/* background */
+body {
+  background-color:#4EC0D4;
+}
+
+/* headings */
+
+h1 {
+  font-family: 'VT323', monospace;
+  font-size: 100px;
+  color: #ffffff;
+  text-align: center;
+}
+
+h3 {
+    font-family: 'VT323', monospace;
+    font-size: 50px;
+    color: #ffffff;
+    text-align: left; 
+}
+
+/*paragraphs*/
+p {
+  font-family: 'VT323', monospace;
+  font-size: 25px;
+  color: #ffffff;
+}
+
+/*lists*/
+.cart-items li {
+    padding: 10px;
+    display: block;
+    width: 100%;
+    text-align: left;
+}
+
+/* logo cover */
+.logo_cover {
+  display: block;
+  width: 100%;
+}
+
+  /* navigation menu */
+
+  .nav-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #17272C;
+  }
+  
+  li {
+    float: left;
+    font-family: 'VT323', monospace;
+    font-size: 25px;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover {
+    background-color: #04789F;
+  }
+
+  @media screen and (max-width: 600px) {
+    .nav-list li.right, 
+    .nav-list li {float: none;}
+  }

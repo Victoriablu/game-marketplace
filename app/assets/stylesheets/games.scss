@@ -72,7 +72,7 @@ p {
   }
   
   div.card:hover {
-    border: 1px solid #17272C ;
+    border: 1px solid #17272C;
   }
   
   div.card img {
@@ -124,16 +124,11 @@ p {
     margin-right: auto;
   }
   
-  div.listing-description {
-    padding: 15px;
-    text-align: center;
-  }
-
   .details-list {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+    padding: 10px;
+    display: block;
+    width: 100%;
+    text-align: center;
   }
   
   /* Form */
