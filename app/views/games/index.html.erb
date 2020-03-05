@@ -1,12 +1,21 @@
 
-<%# image_tag("/icons/icon.gif", class: "menu_icon")
-# => <img class="menu_icon" src="https://s3.amazonaws.com/rails-game-marketplace/games-vault-cover.png
-" /> %>
+<img class="logo_cover" src="https://rails-game-vault-site-assets.s3-ap-southeast-2.amazonaws.com/games-vault-cover-small.png
+" />
 
-<p>Trade and sell video games</p>
-
-<%= button_to "List Game", new_game_path %>
 <br>
+
+<section id ="home">
+  <div class="overlay">
+    <nav id="navbar" class="nav">
+        <ul class="nav-list">
+          <li><%= link_to 'Home', games_path %></li>
+          <li><%= link_to "List Game", new_game_path %></li>
+          <li><%= form_tag games_path, :method => 'get' do %>
+          <%= text_field_tag :search, params[:search] %>
+          <%= submit_tag "Search" %>
+          <%end%></li>
+        </ul>
+    </nav>
 
 <%= form_tag games_path, :method => 'get' do %>
   <%= text_field_tag :search, params[:search] %>
