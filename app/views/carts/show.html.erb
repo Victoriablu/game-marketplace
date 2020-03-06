@@ -1,12 +1,18 @@
 <img class="logo_cover" src="https://rails-game-vault-site-assets.s3-ap-southeast-2.amazonaws.com/games-vault-cover.png
 "/>
-
 <section id ="home">
   <div class="overlay">
     <nav id="navbar" class="nav">
         <ul class="nav-list">
          <li><%= link_to 'Home', games_path %></li>
          <li><%= link_to "List Game", new_game_path %></li>
+         <% if user_signed_in? %>
+          <li>Welcome <%= current_user.email %></li>
+          <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete  %></li>
+          <% else %>
+          <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+          <li><%= link_to 'Account Login', new_user_session_path %></li>
+        <% end %>
          <li style="float:right"><%= form_tag games_path, :method => 'get' do %>
           <%= text_field_tag :search, params[:search] %>
           <%= submit_tag "Search" %>
@@ -36,7 +42,7 @@
 <h3>Sub total: <%= number_to_currency(@cart.sub_total) %></h3>
 
 </div class="cart-links" id="cart-links">
-<%= button_to "Proceed to checkout", new_order_path %><br>
+<%= button_to "Proceed to checkout", new_order_path, method: :get %><br>
 
 <%= button_to "Empty cart", cart_path(@current_cart),method: :delete, data: {confirm: "Are you sure?"}%>
 </div>

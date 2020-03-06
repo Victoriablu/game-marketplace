@@ -1,3 +1,25 @@
+<img class="logo_cover" src="https://rails-game-vault-site-assets.s3-ap-southeast-2.amazonaws.com/games-vault-cover.png
+"/>
+<section id ="home">
+  <div class="overlay">
+    <nav id="navbar" class="nav">
+        <ul class="nav-list">
+         <li><%= link_to 'Home', games_path %></li>
+         <li><%= link_to "List Game", new_game_path %></li>
+         <% if user_signed_in? %>
+          <li>Welcome <%= current_user.email %></li>
+          <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete  %></li>
+          <% else %>
+          <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+          <li><%= link_to 'Account Login', new_user_session_path %></li>
+        <% end %>
+         <li style="float:right"><%= form_tag games_path, :method => 'get' do %>
+          <%= text_field_tag :search, params[:search] %>
+          <%= submit_tag "Search" %>
+          <%end%></li>
+        </ul>
+    </nav>
+
 <h2>All Orders</h2>
 
 <% @orders.each do |order| %>

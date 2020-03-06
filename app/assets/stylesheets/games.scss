@@ -139,6 +139,20 @@ p {
     border: 1px solid #ccc;
     border-radius: 4px;
   }
+
+  input[type=email], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  input[type=password], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
   
   label {
     padding: 12px 12px 12px 0;
