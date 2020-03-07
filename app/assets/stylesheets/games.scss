@@ -67,6 +67,14 @@ body {
     padding: 0;
   }
 
+  .or {
+    color: #ffffff;
+    font-family: 'VT323', monospace;
+    font-size: 30px;
+    display: block;
+    text-align: center;
+  }
+
   .devise li a:visited {
     color: #ffffff;
   }
@@ -131,9 +139,13 @@ body {
   /* view game details */
   .listing-picture {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 13%;
+    margin-left: 50px;
+    margin-right: 50px;
+    float: left;
+  
+  }
+  .listing-details {
+    margin-top: 70px;
   }
 
   .listing-details li {
@@ -141,8 +153,10 @@ body {
     font-family: 'VT323', monospace;
     font-size: 25px;
     color: #ffffff;
-    text-align: center;
-    margin-bottom: 5px;
+    text-align: left;
+    margin-right: 50px;
+    margin-top: 15px;
+    margin-left: 80px;
   }
 
   /* forms */
