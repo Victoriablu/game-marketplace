@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :games
   resources :searches
   resources :orders
+  resources :dashboard, only: [:index]
 
 get 'carts/:id' => "carts#show", as: "cart"
 delete 'carts/:id' => "carts#destroy"

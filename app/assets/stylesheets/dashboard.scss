@@ -1,0 +1,28 @@
+// Place all the styles related to the dashboard controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+/* Headings */
+
+.my_games {
+    font-family: 'VT323', monospace;
+    font-size: 50px;
+    color: #ffffff;
+    text-align: left; 
+}
+
+/* Update Details Link */
+.update_details {
+    list-style-type: none;
+    color: #ffffff;
+    font-family: 'VT323', monospace;
+    font-size: 30px;
+    display: block;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  .update_details a:visited {
+    color: #ffffff;
+  }

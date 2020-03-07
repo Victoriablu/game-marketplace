@@ -67,10 +67,5 @@ class GamesController < ApplicationController
 
     def authorize_user!
       return true if current_user == @game.user
-
-      flash[:notice] = "You are not permitted to change that listing."
-      redirect_to "/"
-
-      return false
     end
 end

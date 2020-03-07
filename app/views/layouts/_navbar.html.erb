@@ -7,6 +7,7 @@
          <li><%= link_to 'Home', games_path %></li>
          <li><%= link_to "List Game", new_game_path %></li>
          <li><%= link_to 'Shopping Cart', cart_path(@current_cart) %></li>
+         <li><%= link_to 'Dashboard', dashboard_index_path %>
          <li style="float:right"><%= form_tag games_path, :method => 'get' do %>
           <%= text_field_tag :search, params[:search] %>
           <%= submit_tag "Search" %>
