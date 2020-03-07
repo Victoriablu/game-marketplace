@@ -1,12 +1,7 @@
 class GamesController < ApplicationController
-  # before_action :authenticate_user!
-  # before_action :set_user_game, only: [:show]
-  # before_action :set_user_game, only: [:edit, :update, :destroy]
-
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_game, only: [:show, :edit, :update, :destroy]
-  before_action :authorize_owner, only: [:edit, :update, :destroy]
-
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authorize_user!, only: [:edit, :update, :destroy]
 
   def index
     @games = Game.search(params[:search])
@@ -70,8 +65,8 @@ class GamesController < ApplicationController
       @game = Game.find(params[:id])
     end
 
-    def authorize_owner
-      return true if @game.user == current_user
+    def authorize_user!
+      return true if current_user == @game.user
 
       flash[:notice] = "You are not permitted to change that listing."
       redirect_to "/"
