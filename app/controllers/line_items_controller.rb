@@ -3,7 +3,7 @@ class LineItemsController < ApplicationController
         # Find associated product and current cart
         chosen_game = Game.find(params[:game_id])
         current_cart = @current_cart
-      
+
         # If cart already has this product then find the relevant line_item and iterate quantity otherwise create a new line_item for this product
         if current_cart.games.include?(chosen_game)
           # Find the line_item with the chosen_product
@@ -14,6 +14,7 @@ class LineItemsController < ApplicationController
           @line_item = LineItem.new
           @line_item.cart = current_cart
           @line_item.game = chosen_game
+          @line_item.quantity += 1
         end
       
         # Save and redirect to cart show path
@@ -27,6 +28,7 @@ class LineItemsController < ApplicationController
         redirect_to cart_path(@current_cart)
       end  
 
+      #This is not used - can be added in future to allow for multiple items to be purchased
       def add_quantity
         @line_item = LineItem.find(params[:id])
         @line_item.quantity += 1
@@ -34,6 +36,7 @@ class LineItemsController < ApplicationController
         redirect_to cart_path(@current_cart)
       end
       
+      #Also not used at present
       def reduce_quantity
         @line_item = LineItem.find(params[:id])
         if @line_item.quantity > 1

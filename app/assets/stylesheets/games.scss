@@ -6,29 +6,22 @@ body {
   background-color:#4EC0D4;
 }
 
-/* headings */
-
-h1 {
-  font-family: 'VT323', monospace;
-  font-size: 100px;
-  color: #ffffff;
-  text-align: center;
-}
-
-/*paragraphs*/
-p {
-  font-family: 'VT323', monospace;
-  font-size: 25px;
-  color: #ffffff;
-}
-
 /* logo cover */
 .logo_cover {
   display: block;
   width: 100%;
 }
 
-  /* navigation menu */
+/*page headings*/
+
+.edit-listing, .list-game, .shopping-cart, .all-orders, .order-details, .listing-title {
+  font-family: 'VT323', monospace;
+  font-size: 75px;
+  color: #ffffff;
+  text-align: center;
+}
+
+/* navigation menu */
 
   .nav-list {
     list-style-type: none;
@@ -38,13 +31,13 @@ p {
     background-color: #17272C;
   }
   
-  li {
+  .nav-list li {
     float: left;
     font-family: 'VT323', monospace;
     font-size: 25px;
   }
   
-  li a {
+  .nav-list a {
     display: block;
     color: white;
     text-align: center;
@@ -52,7 +45,7 @@ p {
     text-decoration: none;
   }
   
-  li a:hover {
+  .nav-list li a:hover {
     background-color: #04789F;
   }
 
@@ -61,101 +54,122 @@ p {
     .nav-list li {float: none;}
   }
 
-  /* Game listings */
+  /*devise login*/
 
-  div.card {
-    background-color: #04789F;
-    margin: 5px;
-    border: 1px solid #ccc;
-    float: left;
-    width: 200px;
-  }
-  
-  div.card:hover {
-    border: 1px solid #17272C;
-  }
-  
-  div.card img {
-    width: 100%;
-    height: auto;
-  }
-  
-  div.description {
-    padding: 15px;
+  .devise li {
+    list-style-type: none;
+    color: #ffffff;
+    font-family: 'VT323', monospace;
+    font-size: 30px;
+    display: block;
     text-align: center;
+    margin: 0;
+    padding: 0;
   }
 
-  * {
-    box-sizing: border-box;
-  }
-  
-  .responsive {
-    padding: 0 6px;
-    float: left;
-    width: 15.99999%;
-  }
-  
-  @media only screen and (max-width: 700px) {
-    .responsive {
-      width: 49.99999%;
-      margin: 6px 0;
-    }
-  }
-  
-  @media only screen and (max-width: 500px) {
-    .responsive {
-      width: 100%;
-    }
-  }
-  
-  .clearfix:after {
-    content: "";
-    display: table;
-    clear: both;
+  .devise li a:visited {
+    color: #ffffff;
   }
 
-  /* Individual Listings (Show)*/
+  /* game product cards*/
+  .cards {
+    display: grid;
+    grid-gap: 3rem;
+    grid-template-columns: 500px 500px 500px;
+    }
   
-  div.listing-picture img {
-    width: 20%;
+  .game-card {
+    place-self: center stretch;
+    box-shadow: 0 0 .5rem #17272C;
+    background-color: #ffffff;
+    border-color: #ffffff;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: .5rem;
+  }
+
+  .card-img {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: multiply;
+    max-width: auto;
     height: auto;
+    border-radius: .5rem;
+    margin: 5px 5px 5px 5px;
+    display: block; 
+    float: left;
+    }
+    
+  .game-name {
+    margin-top: 60px;
+    color: #4EC0D4;
+    box-shadow: 0 0 .5rem #ffffff;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-family: 'VT323', monospace;
+    font-size: 25px;
+    }
+
+  .button{
+      color: #4EC0D4;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 0 .5rem #ffffff;
+      text-align: center;
+      padding: 5px;
+    }
+
+  .game-price {
+    display: flex;
+    flex-direction: column;
+    color: #17272C;
+    font-size: large;
+    text-align: center;
+    }
+  
+  /* view game details */
+  .listing-picture {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    width: 13%;
   }
-  
-  .details-list {
-    padding: 10px;
-    display: block;
-    width: 100%;
+
+  .listing-details li {
+    list-style: none;
+    font-family: 'VT323', monospace;
+    font-size: 25px;
+    color: #ffffff;
     text-align: center;
+    margin-bottom: 5px;
   }
-  
-  /* Form */
-  
+
+  /* forms */
+
   input[type=text], select, textarea {
-    width: 100%;
-    padding: 12px;
+    width: 50%;
+    margin-top: 15px;
+    padding: 5px;
     border: 1px solid #ccc;
     border-radius: 4px;
   }
 
   input[type=email], select, textarea {
-    width: 100%;
-    padding: 12px;
+    width: 50%;
+    padding: 5px;
     border: 1px solid #ccc;
     border-radius: 4px;
   }
 
   input[type=password], select, textarea {
-    width: 100%;
-    padding: 12px;
+    width: 50%;
+    padding: 5px;
     border: 1px solid #ccc;
     border-radius: 4px;
   }
   
   label {
-    padding: 12px 12px 12px 0;
     display: inline-block;
   }
   
@@ -163,11 +177,7 @@ p {
     background-color: #04789F;
   }
   
-  .container {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
-  }
+  
   
   
   
